@@ -1224,10 +1224,19 @@ const CONFIG = {
   /* ---------- Scroll reveal ---------- */
   const revealEls = $$(".reveal, .reveal-img");
   if ("IntersectionObserver" in window && !reduceMotion) {
+    // Clipped images report zero visible area, so watch their (unclipped) parent instead.
+    const targets = new Map();
+    revealEls.forEach(el => {
+      const watch = el.classList.contains("reveal-img") ? el.parentElement : el;
+      if (!targets.has(watch)) targets.set(watch, []);
+      targets.get(watch).push(el);
+    });
     const io = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      entries.forEach(e => {
+        if (e.isIntersecting) { targets.get(e.target).forEach(el => el.classList.add("in")); io.unobserve(e.target); }
+      });
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    revealEls.forEach(el => io.observe(el));
+    targets.forEach((_, watch) => io.observe(watch));
   } else {
     revealEls.forEach(el => el.classList.add("in"));
   }
