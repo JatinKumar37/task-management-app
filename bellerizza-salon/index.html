@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bellerizza | Hair, Beauty, Makeup, Nails &amp; Academy</title>
-<meta name="description" content="Bellerizza: Hair, Beauty, Makeup, Nails &amp; Academy. Expert haircuts, hair colour, hair spa, smoothening, facials, bridal and party makeup, manicure, pedicure and grooming. Book your appointment today.">
+<title>Bellerizza Panchkula | Hair, Beauty, Makeup, Nails &amp; Academy</title>
+<meta name="description" content="Bellerizza, Mansa Devi Complex, Panchkula: Hair, Beauty, Makeup, Nails &amp; Academy. Expert haircuts, hair colour, hair spa, smoothening, facials, bridal and party makeup, manicure, pedicure and grooming. Book your appointment today.">
 <meta name="theme-color" content="#252321">
 <link rel="canonical" href="https://www.example.com/">
 
@@ -24,14 +24,30 @@
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- Structured data: only the brand name and description are filled by default.
-     Address, phone, hours etc. are added automatically from CONFIG (bottom of file) once you enter verified values. -->
-<script type="application/ld+json" id="ld-json">
+<!-- Structured data (local business SEO) using verified details.
+     If the business details change, update them here AND in CONFIG near the bottom of this file. -->
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
   "name": "Bellerizza",
-  "description": "Hair, Beauty, Makeup, Nails & Academy."
+  "description": "Hair, Beauty, Makeup, Nails & Academy.",
+  "telephone": "+91-172-404-5120",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "SCO 52, Swastik Vihar, Mansa Devi Complex, Sector 5",
+    "addressLocality": "Panchkula",
+    "addressRegion": "Haryana",
+    "postalCode": "134114",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "09:30",
+    "closes": "21:00"
+  }],
+  "sameAs": ["https://www.instagram.com/bellerizzaunisexsalon/"]
 }
 </script>
 
@@ -1167,18 +1183,16 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
    ========================================================== */
 const CONFIG = {
   name: "Bellerizza",
-  phone: "+910000000000",            // International format, digits only after +. Used for Call Now.
-  phoneDisplay: "+91 00000 00000",   // How the number is displayed on the page.
-  whatsapp: "910000000000",          // WhatsApp number: country code + number, digits only.
-  address: "Add your verified salon address here",
-  mapQuery: "Bellerizza Unisex Salon",      // Used for the Google Map. Best: full address or the exact Google Maps business name.
+  phone: "+911724045120",            // International format. Used for Call Now.
+  phoneDisplay: "0172 404 5120",     // How the number is displayed on the page.
+  whatsapp: "911724045120",          // WhatsApp number: country code + number, digits only. Change if the salon uses a different (mobile) WhatsApp number.
+  address: "SCO 52, Swastik Vihar, Mansa Devi Complex, Sector 5, Panchkula, Haryana 134114",
+  mapQuery: "Bellerizza, SCO 52 Swastik Vihar, Mansa Devi Complex, Sector 5, Panchkula, Haryana 134114",
   hours: [                           // Opening hours shown on the page.
-    ["Monday – Sunday", "Add verified hours"]
+    ["Monday – Sunday", "9:30 AM – 9:00 PM"]
   ],
   instagram: "https://www.instagram.com/bellerizzaunisexsalon/",
-  facebook: "",
-  website: "",                       // e.g. https://www.bellerizza.com (for structured data)
-  verified: false                    // Set to true once the details above are confirmed. Adds them to SEO structured data.
+  facebook: ""                       // e.g. https://www.facebook.com/yourpage (leave empty if none)
 };
 
 (function () {
@@ -1211,15 +1225,6 @@ const CONFIG = {
   $("#mapFrame").src = "https://maps.google.com/maps?q=" + encodeURIComponent(CONFIG.mapQuery) + "&z=15&output=embed";
   $("#year").textContent = new Date().getFullYear();
 
-  if (CONFIG.verified) {
-    const ld = { "@context": "https://schema.org", "@type": "BeautySalon", name: CONFIG.name, description: "Hair, Beauty, Makeup, Nails & Academy." };
-    if (CONFIG.website) ld.url = CONFIG.website;
-    if (CONFIG.phone) ld.telephone = CONFIG.phone;
-    if (CONFIG.address) ld.address = { "@type": "PostalAddress", streetAddress: CONFIG.address };
-    const same = [CONFIG.instagram, CONFIG.facebook].filter(Boolean);
-    if (same.length) ld.sameAs = same;
-    $("#ld-json").textContent = JSON.stringify(ld);
-  }
 
   /* ---------- Navigation ---------- */
   const nav = $("#nav"), burger = $("#burger"), menu = $("#mobileMenu");
