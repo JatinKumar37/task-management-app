@@ -55,10 +55,17 @@
   /* Graceful image fallback: if any image fails to load, show an elegant tinted panel instead of a broken icon. */
   window.addEventListener('error', function (e) {
     var t = e.target;
-    if (t && t.tagName === 'IMG' && !t.dataset.failed) {
+    if (t && t.tagName === 'IMG' && !t.dataset.failed && t.getAttribute('src') && t.src.indexOf('data:') !== 0) {
       t.dataset.failed = '1';
       t.style.visibility = 'hidden';
       if (t.parentElement) t.parentElement.classList.add('img-fallback');
+    }
+  }, true);
+  window.addEventListener('load', function (e) {
+    var t = e.target;
+    if (t && t.tagName === 'IMG' && t.dataset.failed) {
+      delete t.dataset.failed; t.style.visibility = '';
+      if (t.parentElement) t.parentElement.classList.remove('img-fallback');
     }
   }, true);
 </script>
@@ -273,7 +280,7 @@ em { font-style: italic; }
 /* The storefront, framed in a gold-outlined arch */
 .hero-photo { position: relative; margin: 0; justify-self: end; width: min(100%, 430px); }
 .hero-photo::before {
-  content: ""; position: absolute; inset: -20px 20px 20px -20px; border: 1px solid var(--gold);
+  content: ""; position: absolute; inset: -14px -14px 0 -14px; border: 1px solid var(--gold); border-bottom: 0;
   border-radius: 999px 999px 0 0; opacity: 0; animation: fadeIn 1.4s .9s var(--ease) forwards;
 }
 .hero-arch {
@@ -372,13 +379,14 @@ em { font-style: italic; }
 
 /* Service dialog */
 dialog.svc-modal {
-  border: 0; padding: 0; margin: auto; width: min(960px, calc(100% - 32px)); max-height: calc(100vh - 32px);
+  border: 0; padding: 0; margin: auto; width: min(960px, calc(100% - 32px)); max-width: calc(100vw - 32px); max-height: calc(100vh - 32px); overflow-x: hidden;
   background: var(--ivory); color: var(--charcoal); overflow: auto;
 }
 dialog.svc-modal::backdrop { background: rgba(10,46,34,.75); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
 dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
 @keyframes modalIn { from { opacity: 0; transform: translateY(30px); } }
-.modal-grid { display: grid; grid-template-columns: 1fr 1.1fr; }
+.modal-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); }
+.modal-grid > * { min-width: 0; }
 .modal-media { position: relative; min-height: 320px; background: var(--champagne); }
 .modal-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .modal-body { padding: clamp(32px, 5vw, 56px); }
@@ -571,8 +579,9 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
    ========================================================== */
 .js .reveal { opacity: 0; transform: translateY(40px); transition: opacity 1.1s var(--ease-out), transform 1.1s var(--ease-out); }
 .js .reveal.in { opacity: 1; transform: none; }
-.js .reveal-img { clip-path: inset(100% 0 0 0); transition: clip-path 1.4s var(--ease-out); }
-.js .reveal-img.in { clip-path: inset(0 0 0 0); }
+.js .reveal-img { opacity: 0; transform: translateY(50px) scale(.97); transition: opacity 1.2s var(--ease-out), transform 1.4s var(--ease-out); }
+.js .reveal-img.in { opacity: 1; transform: none; }
+.js .about-media .inset.reveal-img { transition-delay: .25s; }
 .stagger > *:nth-child(2) { transition-delay: .08s; }
 .stagger > *:nth-child(3) { transition-delay: .16s; }
 .stagger > *:nth-child(4) { transition-delay: .24s; }
@@ -605,8 +614,9 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .experts-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery-grid { columns: 2; }
-  .modal-grid { grid-template-columns: 1fr; }
-  .modal-media { min-height: 240px; aspect-ratio: 16/9; }
+  .modal-grid { grid-template-columns: minmax(0, 1fr); }
+  .modal-body .contact-actions .btn { flex: 1 1 100%; padding: 0 20px; }
+  .modal-media { min-height: 0; height: clamp(220px, 56vw, 360px); }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
@@ -642,7 +652,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   .hero-arch { clip-path: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   html { scroll-behavior: auto; }
-  .js .reveal, .js .reveal-img { opacity: 1; transform: none; clip-path: none; }
+  .js .reveal, .js .reveal-img { opacity: 1; transform: none; }
 }
 </style>
 </head>
@@ -739,10 +749,10 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   <div class="container about-grid">
     <div class="about-media">
       <div class="frame main reveal-img">
-        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80" alt="Bright, calm salon space with styling stations" loading="lazy" width="1000" height="1250">
+        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80" alt="Bright, calm salon space with styling stations" width="1000" height="1250">
       </div>
       <div class="frame inset reveal-img">
-        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=80" alt="Stylist washing a client's hair at the salon basin" loading="lazy" width="700" height="933">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=80" alt="Stylist washing a client's hair at the salon basin" width="700" height="933">
       </div>
       <div class="about-badge" aria-hidden="true">
         <svg viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
@@ -863,7 +873,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5L5 19"/></svg>
   </button>
   <div class="modal-grid">
-    <div class="modal-media"><img id="svcModalImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt=""></div>
+    <div class="modal-media"><img id="svcModalImg" alt=""></div>
     <div class="modal-body">
       <p class="eyebrow" id="svcModalNum">Service</p>
       <h3 id="svcModalTitle">Service</h3>
@@ -1003,7 +1013,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   </div>
   <div class="lb-stage">
     <button class="lb-btn lb-prev" type="button" id="lbPrev" aria-label="Previous image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 5l-7 7 7 7"/></svg></button>
-    <img id="lbImg" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="">
+    <img id="lbImg" alt="">
     <button class="lb-btn lb-next" type="button" id="lbNext" aria-label="Next image"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 5l7 7-7 7"/></svg></button>
   </div>
   <div class="lb-caption" id="lbCaption"></div>
