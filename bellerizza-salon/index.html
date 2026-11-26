@@ -441,21 +441,6 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
 .lb-next { right: clamp(10px, 3vw, 40px); }
 
 /* ==========================================================
-   11. Testimonials
-   ========================================================== */
-.testimonials { background: var(--ivory); }
-.t-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.t-card { margin: 0; position: relative; background: #fff; padding: clamp(32px, 4vw, 48px); border: 1px solid var(--line); display: flex; flex-direction: column; transition: transform .6s var(--ease-out), border-color .6s; }
-.t-card:hover { transform: translateY(-6px); border-color: var(--gold); }
-.t-card .q { font-family: var(--serif); font-size: 90px; line-height: .6; color: var(--gold); height: 40px; }
-.t-card blockquote { margin: 0 0 32px; font-family: var(--serif); font-size: clamp(21px, 1.8vw, 24px); line-height: 1.45; flex: 1; }
-.t-meta { display: flex; align-items: center; gap: 14px; padding-top: 22px; border-top: 1px solid var(--line); }
-.t-avatar { width: 46px; height: 46px; border-radius: 50%; background: var(--champagne); display: grid; place-items: center; font-family: var(--serif); font-size: 20px; color: var(--gold-deep); }
-.t-meta b { display: block; font-weight: 500; font-size: 14px; letter-spacing: .08em; }
-.t-meta small { color: var(--ink-soft); font-size: 13px; }
-.t-note { text-align: center; margin-top: 36px; font-size: 13px; color: var(--ink-soft); letter-spacing: .04em; }
-
-/* ==========================================================
    12. CTA band
    ========================================================== */
 .cta { position: relative; color: var(--ivory); text-align: center; overflow: hidden; background: var(--charcoal); padding: clamp(110px, 16vw, 200px) 0; }
@@ -582,7 +567,6 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   .about-media { max-width: 560px; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .experts-grid { grid-template-columns: repeat(2, 1fr); }
-  .t-grid { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
   .gallery-grid { columns: 2; }
   .modal-grid { grid-template-columns: 1fr; }
   .modal-media { min-height: 240px; aspect-ratio: 16/9; }
@@ -979,35 +963,6 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   </div>
   <div class="lb-caption" id="lbCaption"></div>
 </div>
-
-<!-- ================= TESTIMONIALS ================= -->
-<section class="section testimonials" id="testimonials" aria-labelledby="t-title">
-  <div class="container">
-    <div class="section-head center reveal">
-      <p class="eyebrow">Kind Words</p>
-      <h2 class="h-display" id="t-title">Loved by Our <em>Guests</em></h2>
-    </div>
-    <!-- PLACEHOLDER TESTIMONIALS: replace with genuine, verified client reviews (with permission) before launch. -->
-    <div class="t-grid stagger">
-      <figure class="t-card reveal">
-        <div class="q" aria-hidden="true">&ldquo;</div>
-        <blockquote>The consultation felt so personal. My colour looks natural, dimensional and exactly what I had imagined.</blockquote>
-        <figcaption class="t-meta"><span class="t-avatar" aria-hidden="true">C</span><div><b>Colour Client</b><small>Placeholder testimonial</small></div></figcaption>
-      </figure>
-      <figure class="t-card reveal">
-        <div class="q" aria-hidden="true">&ldquo;</div>
-        <blockquote>From the trial to the big day, I felt calm and cared for. The bridal look was elegant and lasted beautifully.</blockquote>
-        <figcaption class="t-meta"><span class="t-avatar" aria-hidden="true">B</span><div><b>Bridal Client</b><small>Placeholder testimonial</small></div></figcaption>
-      </figure>
-      <figure class="t-card reveal">
-        <div class="q" aria-hidden="true">&ldquo;</div>
-        <blockquote>A truly relaxing hair spa in a gorgeous space. I left feeling refreshed, polished and completely pampered.</blockquote>
-        <figcaption class="t-meta"><span class="t-avatar" aria-hidden="true">S</span><div><b>Spa Client</b><small>Placeholder testimonial</small></div></figcaption>
-      </figure>
-    </div>
-    <p class="t-note reveal">Sample testimonials shown for layout purposes. Genuine client reviews coming soon.</p>
-  </div>
-</section>
 
 <!-- ================= CTA ================= -->
 <section class="cta" aria-labelledby="cta-title">
