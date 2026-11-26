@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Bellerizza">
 <meta property="og:title" content="Bellerizza | Hair · Beauty · Makeup · Nails · Academy">
 <meta property="og:description" content="Expert care, personalised treatments and a luxurious salon experience. Hair, skin, bridal makeup, nails and grooming.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1200&h=630&q=80">
+<meta property="og:image" content="https://raw.githubusercontent.com/JatinKumar37/task-management-app/claude/bellerizza-salon-website-8sv2qs/bellerizza-salon/images/bellerizza-storefront.jpg">
 <meta property="og:url" content="https://www.example.com/">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -257,33 +257,61 @@ em { font-style: italic; }
 /* ==========================================================
    5. Hero
    ========================================================== */
-.hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: flex-end; color: var(--ivory); overflow: hidden; background: var(--bottle); }
-.hero-media { position: absolute; inset: 0; }
-.hero-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; transform: scale(1.12); animation: heroZoom 14s var(--ease) forwards; }
-@keyframes heroZoom { to { transform: scale(1.02); } }
-.hero-media::after {
+.hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; color: var(--ivory); overflow: hidden; background: var(--bottle-deep); }
+/* Atmospheric background: a blurred, green-tinted copy of the storefront */
+.hero-bg { position: absolute; inset: 0; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; filter: blur(34px) saturate(.9) brightness(.55); transform: scale(1.25); }
+.hero-bg::after {
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(180deg, rgba(10,46,34,.6) 0%, rgba(10,46,34,.15) 30%, rgba(10,46,34,.3) 55%, rgba(10,46,34,.88) 100%),
-    linear-gradient(90deg, rgba(10,46,34,.72) 0%, rgba(10,46,34,.1) 70%);
+    radial-gradient(60% 70% at 78% 45%, rgba(180,154,114,.18) 0%, rgba(180,154,114,0) 70%),
+    linear-gradient(90deg, rgba(10,46,34,.96) 0%, rgba(10,46,34,.82) 45%, rgba(10,46,34,.6) 100%);
 }
-.hero-content { position: relative; z-index: 1; width: 100%; padding-top: 160px; padding-bottom: clamp(64px, 10vh, 120px); }
-.hero h1 { font-size: clamp(50px, 9vw, 132px); line-height: .98; letter-spacing: -.02em; max-width: 12ch; }
+.hero-content { position: relative; z-index: 1; width: 100%; padding-top: 150px; padding-bottom: clamp(70px, 10vh, 120px);
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: clamp(40px, 6vw, 96px); align-items: center; }
+
+/* The storefront, framed in a gold-outlined arch */
+.hero-photo { position: relative; margin: 0; justify-self: end; width: min(100%, 430px); }
+.hero-photo::before {
+  content: ""; position: absolute; inset: -20px 20px 20px -20px; border: 1px solid var(--gold);
+  border-radius: 999px 999px 0 0; opacity: 0; animation: fadeIn 1.4s .9s var(--ease) forwards;
+}
+.hero-arch {
+  position: relative; aspect-ratio: 3/4; overflow: hidden; border-radius: 999px 999px 0 0; background: var(--bottle);
+  box-shadow: 0 50px 90px -20px rgba(0,0,0,.55);
+  clip-path: inset(100% 0 0 0 round 999px 999px 0 0); animation: archIn 1.6s .25s var(--ease-out) forwards;
+}
+.hero-arch img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transform: scale(1.15); animation: heroZoom 9s .25s var(--ease) forwards; }
+.hero-arch::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,46,34,0) 60%, rgba(10,46,34,.45) 100%); }
+@keyframes archIn { to { clip-path: inset(0 0 0 0 round 999px 999px 0 0); } }
+@keyframes heroZoom { to { transform: scale(1.02); } }
+@keyframes fadeIn { to { opacity: 1; } }
+.hero-card {
+  position: absolute; left: -64px; bottom: 44px; z-index: 2; display: flex; gap: 14px; align-items: center;
+  background: var(--ivory); color: var(--charcoal); padding: 16px 22px 16px 16px; box-shadow: 0 20px 40px -12px rgba(0,0,0,.4);
+}
+.hero-card .pin { flex: none; width: 44px; height: 44px; border-radius: 50%; background: var(--bottle); color: var(--gold); display: grid; place-items: center; }
+.hero-card .pin svg { width: 18px; height: 18px; }
+.hero-card small { display: block; font-size: 10px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--gold-deep); line-height: 1.4; }
+.hero-card b { display: block; font-family: var(--serif); font-weight: 500; font-size: 19px; line-height: 1.25; }
+.hero-card span { display: block; font-size: 12.5px; color: var(--ink-soft); line-height: 1.4; }
+.hero-tag {
+  position: absolute; right: -14px; top: 34%; z-index: 2; writing-mode: vertical-rl; transform: rotate(180deg);
+  font-size: 10px; letter-spacing: .42em; text-transform: uppercase; color: var(--champagne);
+}
+.hero h1 { font-size: clamp(50px, 7.4vw, 118px); line-height: .98; letter-spacing: -.02em; max-width: 12ch; }
 .hero h1 em { color: var(--champagne); font-weight: 400; }
 .hero h1 .line { display: block; overflow: hidden; padding-bottom: .06em; }
 .hero h1 .line > span { display: inline-block; transform: translateY(105%); animation: rise 1.3s var(--ease-out) forwards; }
 .hero h1 .line:nth-child(2) > span { animation-delay: .15s; }
 .hero h1 .line:nth-child(3) > span { animation-delay: .3s; }
 @keyframes rise { to { transform: none; } }
-.hero-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 40px; }
+.hero-row { margin-top: 36px; }
 .hero-text { max-width: 470px; font-size: clamp(16px, 1.4vw, 19px); color: rgba(248,245,240,.85); margin: 0 0 32px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
 .fade-up { opacity: 0; transform: translateY(24px); animation: fadeUp 1.2s var(--ease-out) forwards; }
 .d1 { animation-delay: .55s; } .d2 { animation-delay: .75s; } .d3 { animation-delay: .95s; }
 @keyframes fadeUp { to { opacity: 1; transform: none; } }
-.scroll-cue { display: flex; flex-direction: column; align-items: center; gap: 14px; font-size: 10px; letter-spacing: .4em; text-transform: uppercase; color: rgba(248,245,240,.75); writing-mode: vertical-rl; }
-.scroll-cue::after { content: ""; width: 1px; height: 70px; background: linear-gradient(var(--champagne), transparent); animation: cue 2.4s var(--ease) infinite; transform-origin: top; }
-@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
 
 /* Marquee */
 .marquee { background: var(--bottle-deep); color: var(--champagne); overflow: hidden; border-top: 1px solid var(--line-light); padding: 22px 0; }
@@ -565,6 +593,12 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 960px) {
+  .hero { align-items: flex-end; }
+  .hero-bg { bottom: auto; aspect-ratio: 3 / 4; overflow: hidden; }
+  .hero-bg img { filter: none; transform: scale(1.08); object-position: center top; animation: heroZoom 9s var(--ease) forwards; }
+  .hero-bg::after { background: linear-gradient(180deg, rgba(10,46,34,.6) 0%, rgba(10,46,34,0) 16%, rgba(10,46,34,0) 50%, rgba(10,46,34,.75) 78%, var(--bottle-deep) 100%); }
+  .hero-content { grid-template-columns: 1fr; padding-top: calc(133vw - 170px); }
+  .hero-photo { display: none; }
   .section-head { grid-template-columns: 1fr; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .about-media { max-width: 560px; }
@@ -573,13 +607,12 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   .gallery-grid { columns: 2; }
   .modal-grid { grid-template-columns: 1fr; }
   .modal-media { min-height: 240px; aspect-ratio: 16/9; }
-  .scroll-cue { display: none; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
   :root { --nav-h: 72px; }
   .brand-name { font-size: 22px; }
-  .hero-content { padding-top: 130px; }
+  .hero-content { padding-bottom: 48px; }
   .hero .eyebrow { font-size: 10.5px; letter-spacing: .2em; gap: 10px; }
   .hero .eyebrow::before { width: 20px; }
   .brand-sub { font-size: 7px; letter-spacing: .1em; }
@@ -606,6 +639,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   .lb-stage { margin-bottom: 60px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .hero-arch { clip-path: none; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   html { scroll-behavior: auto; }
   .js .reveal, .js .reveal-img { opacity: 1; transform: none; clip-path: none; }
@@ -659,29 +693,37 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="home" aria-label="Welcome">
-  <div class="hero-media">
-    <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=2000&q=80"
-         srcset="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=900&q=75 900w,
-                 https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1500&q=80 1500w,
-                 https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=2200&q=80 2200w"
-         sizes="100vw" alt="Bright, modern salon interior with round mirrors and styling chairs" fetchpriority="high">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="images/bellerizza-storefront.jpg" alt="" fetchpriority="high">
   </div>
   <div class="container hero-content">
-    <p class="eyebrow light fade-up">Hair · Beauty · Makeup · Nails · Academy</p>
-    <h1>
-      <span class="line"><span>Where Beauty</span></span>
-      <span class="line"><span>Meets <em>Elegance</em></span></span>
-    </h1>
-    <div class="hero-row">
-      <div>
+    <div class="hero-copy">
+      <p class="eyebrow light fade-up">Hair · Beauty · Makeup · Nails · Academy</p>
+      <h1>
+        <span class="line"><span>Where Beauty</span></span>
+        <span class="line"><span>Meets <em>Elegance</em></span></span>
+      </h1>
+      <div class="hero-row">
         <p class="hero-text fade-up d1">Discover your beauty with expert care, personalised treatments and a luxurious salon experience.</p>
         <div class="hero-actions fade-up d2">
           <a href="#book" class="btn btn-gold">Book an Appointment</a>
           <a href="#services" class="btn btn-ghost-light">Explore Our Services</a>
         </div>
       </div>
-      <span class="scroll-cue fade-up d3" aria-hidden="true">Scroll</span>
     </div>
+    <figure class="hero-photo">
+      <div class="hero-arch">
+        <picture>
+          <source srcset="images/bellerizza-storefront.webp" type="image/webp">
+          <img src="images/bellerizza-storefront.jpg" width="765" height="1020" alt="The Bellerizza salon storefront in Mansa Devi Complex, Panchkula, with its illuminated gold sign">
+        </picture>
+      </div>
+      <span class="hero-tag" aria-hidden="true">Panchkula</span>
+      <figcaption class="hero-card fade-up d3">
+        <span class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s7-6.3 7-12a7 7 0 10-14 0c0 5.7 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+        <span><small>Visit our salon</small><b>Mansa Devi Complex</b><span>Open daily · 9:30 AM – 9 PM</span></span>
+      </figcaption>
+    </figure>
   </div>
 </section>
 
