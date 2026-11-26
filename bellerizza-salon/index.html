@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bellerizza Salon | Luxury Hair, Beauty &amp; Bridal Salon</title>
-<meta name="description" content="Bellerizza Salon is a premium beauty destination offering expert haircuts, hair colour, hair spa, smoothening, facials, bridal and party makeup, manicure, pedicure and grooming. Book your appointment today.">
+<title>Bellerizza | Hair, Beauty, Makeup, Nails &amp; Academy</title>
+<meta name="description" content="Bellerizza: Hair, Beauty, Makeup, Nails &amp; Academy. Expert haircuts, hair colour, hair spa, smoothening, facials, bridal and party makeup, manicure, pedicure and grooming. Book your appointment today.">
 <meta name="theme-color" content="#252321">
 <link rel="canonical" href="https://www.example.com/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Bellerizza Salon">
-<meta property="og:title" content="Bellerizza Salon | Where Beauty Meets Elegance">
+<meta property="og:site_name" content="Bellerizza">
+<meta property="og:title" content="Bellerizza | Hair · Beauty · Makeup · Nails · Academy">
 <meta property="og:description" content="Expert care, personalised treatments and a luxurious salon experience. Hair, skin, bridal makeup, nails and grooming.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&h=630&q=80">
 <meta property="og:url" content="https://www.example.com/">
@@ -30,8 +30,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
-  "name": "Bellerizza Salon",
-  "description": "Premium hair, beauty, bridal and grooming salon."
+  "name": "Bellerizza",
+  "description": "Hair, Beauty, Makeup, Nails & Academy."
 }
 </script>
 
@@ -184,7 +184,9 @@ em { font-style: italic; }
 .nav-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: inline-flex; flex-direction: column; line-height: 1; position: relative; z-index: 2; }
 .brand-name { font-family: var(--serif); font-size: 27px; font-weight: 500; letter-spacing: .26em; margin-right: -.26em; }
-.brand-sub { font-size: 9px; letter-spacing: .62em; text-transform: uppercase; margin-top: 7px; color: var(--gold); text-align: center; }
+.brand-sub { font-size: 8px; font-weight: 400; letter-spacing: .13em; white-space: nowrap; text-transform: uppercase; margin-top: 8px; color: var(--champagne); text-align: center; }
+.nav.scrolled .brand-sub { color: var(--gold-deep); }
+.footer .brand-sub { color: var(--gold); }
 .nav-links { display: flex; align-items: center; gap: clamp(18px, 2.3vw, 38px); list-style: none; margin: 0; padding: 0; }
 .nav-links a {
   position: relative; font-size: 12px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; padding: 8px 0;
@@ -575,6 +577,9 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   :root { --nav-h: 72px; }
   .brand-name { font-size: 22px; }
   .hero-content { padding-top: 130px; }
+  .hero .eyebrow { font-size: 10.5px; letter-spacing: .2em; gap: 10px; }
+  .hero .eyebrow::before { width: 20px; }
+  .brand-sub { font-size: 7px; letter-spacing: .1em; }
   .hero-actions .btn { flex: 1 1 100%; }
   .services-grid { grid-template-columns: 1fr; gap: 14px; }
   .svc { aspect-ratio: 4/3.6; }
@@ -611,9 +616,9 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
 <!-- ================= NAVIGATION ================= -->
 <header class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="#home" class="brand" aria-label="Bellerizza Salon, back to top">
+    <a href="#home" class="brand" aria-label="Bellerizza, back to top">
       <span class="brand-name">BELLERIZZA</span>
-      <span class="brand-sub">Salon</span>
+      <span class="brand-sub">Hair · Beauty · Makeup · Nails · Academy</span>
     </a>
     <nav aria-label="Primary">
       <ul class="nav-links">
@@ -659,7 +664,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
          sizes="100vw" alt="Elegant interior of a luxury hair salon with styling chairs and mirrors" fetchpriority="high">
   </div>
   <div class="container hero-content">
-    <p class="eyebrow light fade-up">Luxury Hair &amp; Beauty Salon</p>
+    <p class="eyebrow light fade-up">Hair · Beauty · Makeup · Nails · Academy</p>
     <h1>
       <span class="line"><span>Where Beauty</span></span>
       <span class="line"><span>Meets <em>Elegance</em></span></span>
@@ -679,8 +684,8 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span>Haircut &amp; Styling</span><span>Colour &amp; Highlights</span><span>Hair Spa</span><span>Skin &amp; Facials</span><span>Bridal Makeup</span><span>Manicure &amp; Pedicure</span><span>Grooming</span>
-    <span>Haircut &amp; Styling</span><span>Colour &amp; Highlights</span><span>Hair Spa</span><span>Skin &amp; Facials</span><span>Bridal Makeup</span><span>Manicure &amp; Pedicure</span><span>Grooming</span>
+    <span>Haircut &amp; Styling</span><span>Colour &amp; Highlights</span><span>Hair Spa</span><span>Skin &amp; Facials</span><span>Bridal Makeup</span><span>Manicure &amp; Pedicure</span><span>Grooming</span><span>Academy</span>
+    <span>Haircut &amp; Styling</span><span>Colour &amp; Highlights</span><span>Hair Spa</span><span>Skin &amp; Facials</span><span>Bridal Makeup</span><span>Manicure &amp; Pedicure</span><span>Grooming</span><span>Academy</span>
   </div>
 </div>
 
@@ -1088,7 +1093,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
     </div>
 
     <div class="map-wrap reveal">
-      <iframe id="mapFrame" title="Map showing the location of Bellerizza Salon" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <iframe id="mapFrame" title="Map showing the location of Bellerizza" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
   </div>
 </section>
@@ -1099,7 +1104,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   <div class="container">
     <div class="footer-top">
       <div>
-        <a href="#home" class="brand"><span class="brand-name">BELLERIZZA</span><span class="brand-sub">Salon</span></a>
+        <a href="#home" class="brand"><span class="brand-name">BELLERIZZA</span><span class="brand-sub">Hair · Beauty · Makeup · Nails · Academy</span></a>
         <p>A premium destination for hair, beauty and grooming, where expert care meets quiet luxury.</p>
         <div class="socials">
           <a href="#" data-cfg-href="instagram" aria-label="Bellerizza on Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
@@ -1142,7 +1147,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
   </div>
   <div class="footer-word" aria-hidden="true">Bellerizza</div>
   <div class="container footer-bottom">
-    <span>&copy; <span id="year">2026</span> Bellerizza Salon. All rights reserved.</span>
+    <span>&copy; <span id="year">2026</span> Bellerizza. All rights reserved.</span>
     <span>Crafted with care for beautiful moments.</span>
   </div>
 </footer>
@@ -1161,12 +1166,12 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
    Enter VERIFIED details. Empty values are skipped in SEO data.
    ========================================================== */
 const CONFIG = {
-  name: "Bellerizza Salon",
+  name: "Bellerizza",
   phone: "+910000000000",            // International format, digits only after +. Used for Call Now.
   phoneDisplay: "+91 00000 00000",   // How the number is displayed on the page.
   whatsapp: "910000000000",          // WhatsApp number: country code + number, digits only.
   address: "Add your verified salon address here",
-  mapQuery: "Bellerizza Salon",      // Used for the Google Map. Best: full address or the exact Google Maps business name.
+  mapQuery: "Bellerizza Unisex Salon",      // Used for the Google Map. Best: full address or the exact Google Maps business name.
   hours: [                           // Opening hours shown on the page.
     ["Monday – Sunday", "Add verified hours"]
   ],
@@ -1187,7 +1192,7 @@ const CONFIG = {
   const waLink = (text) => "https://wa.me/" + CONFIG.whatsapp.replace(/\D/g, "") + (text ? "?text=" + encodeURIComponent(text) : "");
   const hrefs = {
     tel: "tel:" + CONFIG.phone.replace(/[^\d+]/g, ""),
-    wa: waLink("Hello Bellerizza Salon, I would like to know more about your services."),
+    wa: waLink("Hello Bellerizza, I would like to know more about your services."),
     instagram: CONFIG.instagram || "#contact",
     facebook: CONFIG.facebook || "#contact"
   };
@@ -1207,7 +1212,7 @@ const CONFIG = {
   $("#year").textContent = new Date().getFullYear();
 
   if (CONFIG.verified) {
-    const ld = { "@context": "https://schema.org", "@type": "BeautySalon", name: CONFIG.name, description: "Premium hair, beauty, bridal and grooming salon." };
+    const ld = { "@context": "https://schema.org", "@type": "BeautySalon", name: CONFIG.name, description: "Hair, Beauty, Makeup, Nails & Academy." };
     if (CONFIG.website) ld.url = CONFIG.website;
     if (CONFIG.phone) ld.telephone = CONFIG.phone;
     if (CONFIG.address) ld.address = { "@type": "PostalAddress", streetAddress: CONFIG.address };
@@ -1312,7 +1317,7 @@ const CONFIG = {
     $("#svcModalDesc").textContent = s.d + " Pricing is shared on enquiry, after a consultation.";
     const ul = $("#svcModalList"); ul.innerHTML = "";
     s.l.forEach(i => { const li = document.createElement("li"); li.textContent = i; ul.appendChild(li); });
-    $("#svcModalWa").href = waLink("Hello Bellerizza Salon, I'd like to know more about " + s.t + ".");
+    $("#svcModalWa").href = waLink("Hello Bellerizza, I'd like to know more about " + s.t + ".");
     modal.showModal();
     document.body.classList.add("locked");
   };
@@ -1429,7 +1434,7 @@ const CONFIG = {
     const f = form.elements;
     const dateStr = new Date(f.date.value + "T00:00:00").toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
     const lines = [
-      "Hello Bellerizza Salon, I'd like to book an appointment.",
+      "Hello Bellerizza, I'd like to book an appointment.",
       "",
       "Name: " + f.name.value.trim(),
       "Phone: " + f.phone.value.trim(),
