@@ -400,6 +400,10 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
 .g-item:hover figcaption, .g-item:focus-visible figcaption { transform: none; }
 .g-item:hover::after, .g-item:focus-visible::after { opacity: 1; transform: none; }
 
+.insta-cta { margin-top: 56px; display: flex; flex-direction: column; align-items: center; gap: 18px; text-align: center; }
+.insta-cta p { margin: 0; font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--ink-soft); }
+.insta-cta .btn { text-transform: none; letter-spacing: .08em; font-size: 14px; }
+
 /* Lightbox */
 .lightbox {
   position: fixed; inset: 0; z-index: 200; background: rgba(25,23,21,.96); color: var(--ivory);
@@ -688,7 +692,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
         <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1000&q=80" alt="Bright, calm salon space with styling stations" loading="lazy" width="1000" height="1250">
       </div>
       <div class="frame inset reveal-img">
-        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=700&q=80" alt="Stylist creating soft waves in a client's hair" loading="lazy" width="700" height="933">
+        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=80" alt="Stylist washing a client's hair at the salon basin" loading="lazy" width="700" height="933">
       </div>
       <div class="about-badge" aria-hidden="true">
         <svg viewBox="0 0 100 100"><defs><path id="circ" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs>
@@ -733,28 +737,28 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
           <button class="link-arrow" type="button">Explore Service <span class="arw"></span></button></div></div></div>
       </article>
       <article class="svc reveal" data-service="colour" tabindex="-1">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=700&q=75" alt="Colourist applying hair colour in a salon" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=700&q=75" alt="Long, softly waved hair in a lavender colour" loading="lazy">
         <span class="svc-num">02</span>
         <div class="svc-body"><h3>Hair Colour &amp; Highlights</h3>
           <div class="svc-reveal"><div><p>Global colour, balayage and luminous highlights, custom-blended for a natural, dimensional finish.</p>
           <button class="link-arrow" type="button">Explore Service <span class="arw"></span></button></div></div></div>
       </article>
       <article class="svc reveal" data-service="treatment" tabindex="-1">
-        <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=700&q=75" alt="Nourishing hair treatment being applied" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=700&q=75" alt="Restorative hair mask treatment products" loading="lazy">
         <span class="svc-num">03</span>
         <div class="svc-body"><h3>Hair Treatments</h3>
           <div class="svc-reveal"><div><p>Restorative therapies that repair, strengthen and bring back softness and shine.</p>
           <button class="link-arrow" type="button">Explore Service <span class="arw"></span></button></div></div></div>
       </article>
       <article class="svc reveal" data-service="spa" tabindex="-1">
-        <img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=700&q=75" alt="Relaxing hair wash and scalp massage at the salon basin" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1634449571010-02389ed0f9b0?auto=format&fit=crop&w=700&q=75" alt="Client relaxing during a hair wash and spa treatment at the basin" loading="lazy">
         <span class="svc-num">04</span>
         <div class="svc-body"><h3>Hair Spa</h3>
           <div class="svc-reveal"><div><p>A deeply relaxing scalp and hair ritual with massage, steam and intensive nourishment.</p>
           <button class="link-arrow" type="button">Explore Service <span class="arw"></span></button></div></div></div>
       </article>
       <article class="svc reveal" data-service="smoothening" tabindex="-1">
-        <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=700&q=75" alt="Sleek, smooth straight hair after a smoothening treatment" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=700&q=75" alt="Professional straightening iron, brushes and styling tools" loading="lazy">
         <span class="svc-num">05</span>
         <div class="svc-body"><h3>Smoothening &amp; Rebonding</h3>
           <div class="svc-reveal"><div><p>Frizz-free, sleek and manageable hair with long-lasting smoothing techniques.</p>
@@ -768,7 +772,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
           <button class="link-arrow" type="button">Explore Service <span class="arw"></span></button></div></div></div>
       </article>
       <article class="svc reveal" data-service="bridal" tabindex="-1">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=75" alt="Bride with elegant bridal makeup and styled hair" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=75" alt="Bride holding a bouquet on her wedding day" loading="lazy">
         <span class="svc-num">07</span>
         <div class="svc-body"><h3>Bridal Makeup</h3>
           <div class="svc-reveal"><div><p>Timeless bridal looks, with trials and styling, so you look and feel your most beautiful.</p>
@@ -789,7 +793,7 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
           <button class="link-arrow" type="button">Explore Service <span class="arw"></span></button></div></div></div>
       </article>
       <article class="svc reveal" data-service="grooming" tabindex="-1">
-        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=700&q=75" alt="Barber grooming a client's beard and hair" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=700&q=75" alt="Stylist blow-drying and styling a man's hair" loading="lazy">
         <span class="svc-num">10</span>
         <div class="svc-body"><h3>Grooming Services</h3>
           <div class="svc-reveal"><div><p>Refined grooming essentials, including cuts, beard styling and clean-up treatments.</p>
@@ -869,11 +873,11 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
     <!-- Replace the images and role descriptions below with your team's real photos and names. -->
     <div class="experts-grid stagger">
       <article class="expert reveal">
-        <div class="expert-media"><img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=600&q=75" alt="Hair stylist at work" loading="lazy"><span class="expert-tag">Hair</span></div>
+        <div class="expert-media"><img src="https://images.unsplash.com/photo-1559599101-f09722fb4948?auto=format&fit=crop&w=600&q=75" alt="Smiling hair stylists holding scissors and brushes" loading="lazy"><span class="expert-tag">Hair</span></div>
         <h3>Hair Stylists</h3><p>Precision cutting, blow-dries and occasion styling.</p>
       </article>
       <article class="expert reveal">
-        <div class="expert-media"><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=600&q=75" alt="Hair colour specialist working on highlights" loading="lazy"><span class="expert-tag">Colour</span></div>
+        <div class="expert-media"><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=75" alt="Long hair with soft, sun-kissed balayage colour" loading="lazy"><span class="expert-tag">Colour</span></div>
         <h3>Colour Specialists</h3><p>Balayage, highlights and bespoke colour.</p>
       </article>
       <article class="expert reveal">
@@ -897,42 +901,47 @@ dialog.svc-modal[open] { animation: modalIn .6s var(--ease-out); }
       <p class="lead">A glimpse into the artistry, colour and calm of Bellerizza.</p>
     </div>
     <div class="gallery-grid" id="galleryGrid">
-      <figure class="g-item tall reveal" tabindex="0" role="button" aria-label="View: Hair transformation">
-        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1800&q=85" alt="Soft, glossy waves after a hair transformation" loading="lazy">
-        <figcaption><small>Hair</small><span>Hair Transformation</span></figcaption>
+      <figure class="g-item tall reveal" tabindex="0" role="button" aria-label="View: Professional Styling">
+        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1800&q=85" alt="Stylist creating soft curls with a curling wand" loading="lazy">
+        <figcaption><small>Hair</small><span>Professional Styling</span></figcaption>
       </figure>
-      <figure class="g-item wide reveal" tabindex="0" role="button" aria-label="View: Salon interior">
-        <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?auto=format&fit=crop&w=1800&q=85" alt="Luxurious salon interior with warm lighting" loading="lazy">
+      <figure class="g-item wide reveal" tabindex="0" role="button" aria-label="View: The Salon">
+        <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&w=1800&q=85" alt="Bright, modern salon interior with styling stations" loading="lazy">
         <figcaption><small>Interiors</small><span>The Salon</span></figcaption>
       </figure>
-      <figure class="g-item square reveal" tabindex="0" role="button" aria-label="View: Hair colouring">
-        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1800&q=85" alt="Hair colouring in progress at the salon" loading="lazy">
+      <figure class="g-item square reveal" tabindex="0" role="button" aria-label="View: Hair Colouring">
+        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=1800&q=85" alt="Long, softly waved hair in a lavender colour" loading="lazy">
         <figcaption><small>Colour</small><span>Hair Colouring</span></figcaption>
       </figure>
-      <figure class="g-item tall reveal" tabindex="0" role="button" aria-label="View: Bridal makeup">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85" alt="Bride with refined bridal makeup" loading="lazy">
-        <figcaption><small>Bridal</small><span>Bridal Makeup</span></figcaption>
+      <figure class="g-item tall reveal" tabindex="0" role="button" aria-label="View: Bridal Moments">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=85" alt="Bride holding a bouquet on her wedding day" loading="lazy">
+        <figcaption><small>Bridal</small><span>Bridal Moments</span></figcaption>
       </figure>
-      <figure class="g-item wide reveal" tabindex="0" role="button" aria-label="View: Beauty treatment">
-        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=85" alt="Relaxing facial beauty treatment" loading="lazy">
+      <figure class="g-item wide reveal" tabindex="0" role="button" aria-label="View: Beauty Treatment">
+        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1800&q=85" alt="Client relaxing during a facial mask treatment" loading="lazy">
         <figcaption><small>Skin</small><span>Beauty Treatment</span></figcaption>
       </figure>
-      <figure class="g-item tall reveal" tabindex="0" role="button" aria-label="View: Professional styling">
-        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1800&q=85" alt="Professional styling by a salon expert" loading="lazy">
-        <figcaption><small>Styling</small><span>Professional Styling</span></figcaption>
+      <figure class="g-item tall reveal" tabindex="0" role="button" aria-label="View: Hair Transformation">
+        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&w=1800&q=85" alt="Stylist blow-drying a client's hair into soft volume" loading="lazy">
+        <figcaption><small>Hair</small><span>Hair Transformation</span></figcaption>
       </figure>
-      <figure class="g-item square reveal" tabindex="0" role="button" aria-label="View: Makeup artistry">
-        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?auto=format&fit=crop&w=1800&q=85" alt="Makeup artistry close-up" loading="lazy">
+      <figure class="g-item square reveal" tabindex="0" role="button" aria-label="View: Makeup Artistry">
+        <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1800&q=85" alt="Makeup palette, brushes and foundations laid out" loading="lazy">
         <figcaption><small>Makeup</small><span>Makeup Artistry</span></figcaption>
       </figure>
-      <figure class="g-item wide reveal" tabindex="0" role="button" aria-label="View: Salon atmosphere">
-        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1800&q=85" alt="Calm salon styling stations" loading="lazy">
-        <figcaption><small>Interiors</small><span>Salon Atmosphere</span></figcaption>
+      <figure class="g-item wide reveal" tabindex="0" role="button" aria-label="View: Men's Grooming">
+        <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1532710093739-9470acff878f?auto=format&fit=crop&w=1800&q=85" alt="Barber shaping a client's beard" loading="lazy">
+        <figcaption><small>Grooming</small><span>Men's Grooming</span></figcaption>
       </figure>
-      <figure class="g-item tall reveal" tabindex="0" role="button" aria-label="View: Nail artistry">
-        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1800&q=85" alt="Elegant manicure with neutral polish" loading="lazy">
-        <figcaption><small>Nails</small><span>Nail Artistry</span></figcaption>
+      <figure class="g-item tall reveal" tabindex="0" role="button" aria-label="View: Manicure">
+        <img src="https://images.unsplash.com/photo-1457972729786-0411a3b2b626?auto=format&fit=crop&w=800&q=75" data-full="https://images.unsplash.com/photo-1457972729786-0411a3b2b626?auto=format&fit=crop&w=1800&q=85" alt="Nail technician applying polish during a manicure" loading="lazy">
+        <figcaption><small>Nails</small><span>Manicure</span></figcaption>
       </figure>
+    </div>
+    <div class="insta-cta reveal">
+      <p>See our latest work on Instagram</p>
+      <a href="#" data-cfg-href="instagram" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>@bellerizzaunisexsalon</a>
     </div>
   </div>
 </section>
@@ -1161,7 +1170,7 @@ const CONFIG = {
   hours: [                           // Opening hours shown on the page.
     ["Monday – Sunday", "Add verified hours"]
   ],
-  instagram: "",                     // e.g. https://www.instagram.com/yourhandle
+  instagram: "https://www.instagram.com/bellerizzaunisexsalon/",
   facebook: "",
   website: "",                       // e.g. https://www.bellerizza.com (for structured data)
   verified: false                    // Set to true once the details above are confirmed. Adds them to SEO structured data.
